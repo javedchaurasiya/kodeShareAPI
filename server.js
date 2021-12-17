@@ -20,6 +20,7 @@ app.get('/',(req,res)=>
 })
 
 app.use('/api/upload',require('./routes/upload'))
+app.use('/download',require('./routes/download'))
 
 app.listen(PORT,()=>
 {

@@ -1,0 +1,50 @@
+body, html
+{
+    font-family: Arial, Helvetica, sans-serif;
+    /* color: antiquewhite; */
+    background: rgb(182, 191, 208);
+    overflow: hidden;
+}
+
+.main
+{
+  
+    /* width: 100%; */
+}
+
+.heading
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.qname
+{
+    margin-left: 20px;
+}
+
+.icons
+{
+    position: absolute;
+    left: 90%;
+    /* background: black; */
+    /* height: auto; */
+    height: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#down-icon
+{
+    margin-left: 10px;
+}
+.src-code
+{
+    /* width: 100%; */
+    background: #111111;
+    /* margin: 30px; */
+    padding: 30px;
+    border-radius: 7px;
+    overflow: auto;
+}

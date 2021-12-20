@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/agate.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/google-light.min.css"> -->
     <!-- <link rel="stylesheet" href="../css/atom-one-dark.css"> -->
-    <link rel="stylesheet" href="../css/colors.css">
+    <!-- <link rel="stylesheet" href="../css/colors.css"> -->
+    <link rel="stylesheet" href="../css/googlelight.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/editor_style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
@@ -19,13 +23,13 @@
     <section class="main">
         <div class="heading"><h1 class="qname"><%- qname%></h1><div class="icons"><span class="material-icons" id="copy-icon">
             content_copy
-            </span><span class="material-icons" id="down-icon">
+            </span><a href="<%= download%>"><span class="material-icons" id="down-icon">
                 download
-                </span></div></div>
-        <pre class="src-code"><code><%- src_code%></code></pre>
+                </span></a></div></div>
+        <pre class="src-code"><code class="for-copy"><%- src_code%></code></pre>
     </section>
     
     <script>hljs.highlightAll();</script>
-    <script src="../js/editorjs.js"></script>
+    <script src="../index.js"></script>
 </body>
 </html>

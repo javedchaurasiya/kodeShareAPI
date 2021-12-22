@@ -3,10 +3,17 @@ const app=express()
 const path=require('path')
 require('dotenv').config()
 const ejs=require('ejs')
+const cors=require('cors')
 
 require('./config/db')
 
 const PORT=process.env.PORT||3000
+
+const corsoptions={
+    origin:process.env.ALLOWED_CLIENTS.split(',')
+}
+
+app.use(cors(corsoptions))
 
 app.use(express.json())
 app.use(express.static(__dirname+'/public'))

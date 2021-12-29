@@ -29,6 +29,7 @@ app.get('/',(req,res)=>
 app.use('/api/upload',require('./routes/upload'))
 app.use('/download',require('./routes/download'))
 app.use('/editor',require('./routes/editor'))
+app.use('/push',require('./routes/push'))
 
 app.listen(PORT,()=>
 {

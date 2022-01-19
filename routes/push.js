@@ -6,19 +6,19 @@ const fs=require('fs')
 
 const path=require('path')
 
-router.get('/',async (req,res)=>
+router.post('/',async (req,res)=>
 {
-    console.log('req made');
+    // console.log('req made');
     try {
-        var {uname,qname,language,src_code,username,repo,token,message}=req.body
+        var {qname,language,src_code,username,repo,token,message}=req.body
         // console.log(`${uname}, ${qname}, ${src_code}, ${language}`);
-        if(!uname||!qname||!src_code||!username||!token||!repo)return res.status(422).json({error:"Missing data"})
+        if(!qname||!src_code||!username||!token||!repo)return res.status(422).json({error:"Missing data"})
 
         if(!language)language=txt;
         if(!message)message="kodeShare Commit"
-
+        const uname=`${Date.now()}-${(Math.random() * 1E16)}`
         var filename=qname+'_'+uname+'.'+language;
-        var filepath=path.join(__dirname,'../uploads')+filename;
+        var filepath=path.join(__dirname,'../uploads')+'/'+filename;
         fs.writeFileSync(filepath,src_code)
 
         let file=fs.readFileSync(filepath).toString()
